@@ -1,3 +1,16 @@
+dispaxis = {
+    'fors2': 1,
+    'efosc': 2
+}
+dispaxis_to_str = {
+    2: 'column',
+    1: 'line'
+}
+biassec = {
+    'efosc': '[3:1010,1026:1029]',
+    'fors2': '[*,981:1025]'
+}
+
 
 def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _cosmic, _interactive):
     # print "LOGX:: Entering `efoscfastredu` method/function in %(__file__)s"
@@ -21,6 +34,9 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
         _inter = 'YES'
     from pyraf import iraf
 
+    hdr = ntt.util.readhdr(imglist[0])
+    _instrume = hdr.get('INSTRUME').lower()
+
     iraf.noao(_doprint=0)
     iraf.imred(_doprint=0)
     iraf.ccdred(_doprint=0)
@@ -43,8 +59,10 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
     _ron = ntt.util.readkey3(ntt.util.readhdr(imglist[0]), 'ron')
     iraf.specred.apall.readnoi = _ron
     iraf.specred.apall.gain = _gain
-    iraf.specred.dispaxi = 2
-    iraf.longslit.dispaxi = 2
+    dispaxi = dispaxis[_instrume]
+    dispaxi_str = dispaxis_to_str[dispaxi]
+    iraf.specred.dispaxi = dispaxi
+    iraf.longslit.dispaxi = dispaxi
     iraf.longslit.mode = 'h'
     iraf.specred.mode = 'h'
     iraf.noao.mode = 'h'
@@ -62,20 +80,27 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
         _object0 = readkey3(hdr, 'object')
         _date0 = readkey3(hdr, 'date-night')
         setup = (_grism0, _filter0, _slit0)
-        _biassec0 = '[3:1010,1026:1029]'
-        if _grism0 == 'Gr16':
-            _trimsec0 = '[100:950,1:950]'
-        elif _grism0 == 'Gr13':
-            if _filter0 == 'Free':
-                _trimsec0 = '[100:950,1:1015]'
-            elif _filter0 == 'GG495':
-                _trimsec0 = '[100:950,208:1015]'
-            elif _filter0 == 'OG530':
-                _trimsec0 = '[100:950,300:1015]'
-        elif _grism0 == 'Gr11':
-            _trimsec0 = '[100:950,5:1015]'
+        _biassec0 = biassec[_instrume]
+        if _instrume == 'efosc':
+            if _grism0 == 'Gr16':
+                _trimsec0 = '[100:950,1:950]'
+            elif _grism0 == 'Gr13':
+                if _filter0 == 'Free':
+                    _trimsec0 = '[100:950,1:1015]'
+                elif _filter0 == 'GG495':
+                    _trimsec0 = '[100:950,208:1015]'
+                elif _filter0 == 'OG530':
+                    _trimsec0 = '[100:950,300:1015]'
+            elif _grism0 == 'Gr11':
+                _trimsec0 = '[100:950,5:1015]'
+            else:
+                _trimsec0 = '[100:950,5:1015]'
+        elif _instrume == 'fors2':
+           _trimsec0 = '[149:2048,7:306]'
         else:
-            _trimsec0 = '[100:950,5:1015]'
+            raise ValueError(
+                '{} is not a supported instrument.'.format(_instrume)
+            )
         _object0 = re.sub(' ', '', _object0)
         _object0 = re.sub('/', '_', _object0)
         nameout0 = 't' + str(_object0) + '_' + str(_date0)
@@ -115,6 +140,7 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
                           string.split(arcfile, '/')[-1])
                 arcfile = string.split(arcfile, '/')[-1]
             arcref = string.split(arcref, '/')[-1]
+            section = dispaxi_str + ' 10'
             if arcref:
                 os.system('cp ' + arcref + ' .')
                 arcref = string.split(arcref, '/')[-1]
@@ -123,14 +149,14 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
                 if os.path.isfile(ntt.util.searcharc(img, '')[1] + '/database/id' + re.sub('.fits', '', arcref)):
                     os.system('cp ' + ntt.util.searcharc(img, '')[1] + '/database/id' + re.sub('.fits', '',
                                                                                                arcref) + ' database/')
-                iraf.longslit.reidentify(referenc=arcref, images=arcfile, interac=_inter, section='column 10',
+                iraf.longslit.reidentify(referenc=arcref, images=arcfile, interac=_inter, section=section,
                                          coordli='direc$standard/ident/Lines_HgCdHeNeAr600.dat', overrid='yes', step=0,
                                          newaps='no', nsum=5, nlost=2, mode='h', verbose='no')
             else:
-                iraf.longslit.identify(images=arcfile, section='column 10',
+                iraf.longslit.identify(images=arcfile, section=section,
                                        coordli='direc$standard/ident/Lines_HgCdHeNeAr600.dat', nsum=10, fwidth=7,
                                        order=3, mode='h')
-            iraf.longslit.reident(referenc=arcfile, images=arcfile, interac='NO', section='column 10',
+            iraf.longslit.reident(referenc=arcfile, images=arcfile, interac='NO', section=section,
                                   coordli='direc$standard/ident/Lines_HgCdHeNeAr600.dat', overrid='yes', step=10,
                                   newaps='yes', nsum=5, nlost=2, mode='h', verbose='no')
             qqq = iraf.longslit.fitcoords(images=re.sub('.fits', '', arcfile), fitname=re.sub('.fits', '', arcfile),
@@ -144,7 +170,7 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
             _skyfile = ntt.__path__[
                 0] + '/standard/ident/sky_' + setup[0] + '_' + setup[1] + '.fits'
             shift = ntt.efoscspec2Ddef.skyfrom2d(img, _skyfile)
-            print '\n###     check in wavelengh performed ...... spectrum shifted of  ' + str(shift) + ' Angstrom \n'
+            print '\n###     check in wavelength performed ...... spectrum shifted by  ' + str(shift) + ' Angstrom \n'
             zro = pyfits.open(img)[0].header.get('CRVAL2')
             ntt.util.updateheader(img, 0, {'CRVAL2': [zro + int(shift), '']})
             std, rastd, decstd, magstd = ntt.util.readstandard(
@@ -167,7 +193,8 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
             result = []
             if _type == 'obj':
                 imgex = ntt.util.extractspectrum(
-                    img, dv, _ext_trace, _dispersionline, _interactive, _type)
+                    img, dv, _ext_trace, _dispersionline, _interactive, _type,
+                    dispaxis=dispaxi)
                 ntt.util.updateheader(
                     imgex, 0, {'FILETYPE': [22107, 'extracted 1D spectrum ']})
                 ntt.util.updateheader(imgex, 0, {
@@ -183,7 +210,7 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
                 if sensfile:
                     imgf = re.sub('.fits', '_f.fits', img)
                     _extinctdir = 'direc$standard/extinction/'
-                    _extinction = 'extinction_lasilla.dat'
+                    _extinction = 'extinction_lasilla.dat' # TODO: paranal
                     _observatory = 'lasilla'
                     _exptime = readkey3(hdrt, 'exptime')
                     _airmass = readkey3(hdrt, 'airmass')
@@ -209,7 +236,8 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
                     result = result + [imgout, imgd, imgasci]
             else:
                 imgex = ntt.util.extractspectrum(
-                    img, dv, _ext_trace, _dispersionline, _interactive, 'std')
+                    img, dv, _ext_trace, _dispersionline, _interactive, 'std',
+                    dispaxis=dispaxi)
                 imgout = ntt.efoscspec1Ddef.sensfunction(
                     imgex, 'spline3', 6, _inter)
                 result = result + [imgout]

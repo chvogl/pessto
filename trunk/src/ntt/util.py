@@ -194,6 +194,36 @@ def readkey3(hdr, keyword):
                        'ycum': aa + 'ESO SEQ CUMOFFSETY',
                        'obsmode': aa + 'ESO DPR CATG',
                        'telescop': 'TELESCOP'}
+    elif _instrume == 'fors2':
+        useful_keys = {'object': 'OBJECT',
+                       'date-obs': 'DATE-OBS',
+                       'ut': 'DATE-OBS',
+                       'RA': 'RA',
+                       'DEC': 'DEC',
+                       'datamin': -100,
+                       'datamax': 65000,
+                       'observer': aa + 'ESO OBS OBSERVER',
+                       'exptime': 'EXPTIME',
+                       'instrume': 'INSTRUME',
+                       'JD': 'MJD-OBS',
+                       #'lamp': 'LMP_ID',
+                       'esoprog': aa + 'ESO OBS PROG ID',
+                       'filter': aa + 'ESO INS OPTI7 NAME',
+                       'grism': aa + 'ESO INS GRIS1 NAME',
+                       'catg': aa + 'ESO DPR CATG',
+                       'tech': aa + 'ESO DPR TECH',
+                       'type': aa + 'ESO DPR TYPE',
+                       'gain': aa + 'ESO DET OUT1 CONAD',
+                       'ron': aa + 'ESO DET OUT1 RON',
+                       'esoid': aa + 'ESO OBS ID',
+                       'binx': aa + 'ESO DET WIN1 BINX',
+                       'speed': aa + 'ESO DET READ SPEED',
+                       'posang': aa + 'ESO ADA POSANG',
+                       'airmass': aa + 'ESO TEL AIRM START',
+                       'airmass1': aa + 'ESO TEL AIRM END',
+                       'slit': aa + 'ESO INS SLIT NAME',
+                       'obsmode': aa + 'ESO DPR CATG',
+                       'telescop': 'TELESCOP'}
     else:
         useful_keys = {'object': 'OBJECT',
                        'date-obs': 'DATE-OBS'}
@@ -843,7 +873,7 @@ def dvex():
     # print "LOGX:: Entering `dvex` method/function in %(__file__)s" %
     # globals()
     dv = {}
-    dv['line'] = {'Gr16': 300, 'Gr11': 430, 'Gr13': 200, 'GR': 150, 'GB': 430}
+    dv['line'] = {'Gr16': 300, 'Gr11': 430, 'Gr13': 200, 'GR': 150, 'GB': 430, 'GRIS_300V': 600}
     dv['std'] = {'_t_order': 6, '_t_niter': 50, '_t_sample': '*', '_t_nlost': 20, '_width': 10, '_radius': 10,
                  '_weights': 'variance',
                  '_nsum': 30, '_t_step': 10, '_t_nsum': 10, '_lower': -10, '_upper': 10, '_b_sample': '-40:-20,20:40',
@@ -1257,7 +1287,8 @@ def limmag(img):
 ####################################################################
 
 
-def extractspectrum(img, dv, _ext_trace, _dispersionline, _interactive, _type, automaticex=False):
+def extractspectrum(img, dv, _ext_trace, _dispersionline, _interactive,
+                    _type, automaticex=False, dispaxis=2):
     # print "LOGX:: Entering `extractspectrum` method/function in
     # %(__file__)s" % globals()
     import glob
@@ -1284,7 +1315,7 @@ def extractspectrum(img, dv, _ext_trace, _dispersionline, _interactive, _type, a
     _gain = ntt.util.readkey3(hdr, 'gain')
     _rdnoise = ntt.util.readkey3(hdr, 'ron')
     _grism = ntt.util.readkey3(hdr, 'grism')
-    iraf.specred.dispaxi = 2
+    iraf.specred.dispaxi = dispaxis
     imgex = re.sub('.fits', '_ex.fits', img)
     imgfast = re.sub(string.split(img, '_')[-2] + '_', '', img)
     # imgfast=re.sub(str(MJDtoday)+'_','',img)
@@ -1412,7 +1443,7 @@ def extractspectrum(img, dv, _ext_trace, _dispersionline, _interactive, _type, a
         _archive = ntt.util.readkey3(hdr, 'ARCFILE')
         _arc = ntt.util.readkey3(hdr, 'ARC')
         _instrume = ntt.util.readkey3(hdr, 'instrume')
-        if _arc and _instrume != 'efosc':
+        if _arc and _instrume == 'sofi':
             if os.path.isfile(_arc):
                 if os.path.isfile(_archive):
                     imgstart = _archive
