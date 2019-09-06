@@ -1,8 +1,8 @@
 # Wed 21:51:54 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,150]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[150,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,150]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[150,*]
 	units	A
 	features	30
 	        238.48 3650.19898    3650.15   6.0 1 1 Hg I     *
@@ -56,10 +56,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,150]
 		-1.2291307021271
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,140]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[140,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,140]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[140,*]
 	units	Angstroms
 	features	30
 	        238.47 3650.22969    3650.15   6.0 1 1 Hg I     *
@@ -113,10 +113,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,140]
 		-1.238123353593704
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,130]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[130,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,130]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[130,*]
 	units	Angstroms
 	features	30
 	        238.46 3650.20181    3650.15   6.0 1 1 Hg I     *
@@ -170,10 +170,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,130]
 		-1.221520967080912
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,120]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[120,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,120]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[120,*]
 	units	Angstroms
 	features	30
 	        238.45 3650.20047    3650.15   6.0 1 1 Hg I     *
@@ -227,10 +227,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,120]
 		-1.224858587241672
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,110]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[110,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,110]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[110,*]
 	units	Angstroms
 	features	30
 	        238.45 3650.21528    3650.15   6.0 1 1 Hg I     *
@@ -284,10 +284,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,110]
 		-1.225744110917031
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,100]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[100,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,100]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[100,*]
 	units	Angstroms
 	features	30
 	        238.42  3650.2069    3650.15   6.0 1 1 Hg I     *
@@ -341,10 +341,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,100]
 		-1.233893598725483
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,90]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[90,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,90]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[90,*]
 	units	Angstroms
 	features	30
 	        238.44 3650.20407    3650.15   6.0 1 1 Hg I     *
@@ -398,10 +398,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,90]
 		-1.204834004207587
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,80]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[80,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,80]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[80,*]
 	units	Angstroms
 	features	30
 	        238.44 3650.22079    3650.15   6.0 1 1 Hg I     *
@@ -455,10 +455,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,80]
 		-1.200008517276819
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,70]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[70,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,70]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[70,*]
 	units	Angstroms
 	features	30
 	        238.41 3650.23494    3650.15   6.0 1 1 Hg I     *
@@ -512,10 +512,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,70]
 		-1.188630780772116
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,60]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[60,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,60]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[60,*]
 	units	Angstroms
 	features	30
 	        238.38 3650.21129    3650.15   6.0 1 1 Hg I     *
@@ -569,10 +569,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,60]
 		-1.178420505617092
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,50]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[50,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,50]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[50,*]
 	units	Angstroms
 	features	30
 	        238.36 3650.21203    3650.15   6.0 1 1 Hg I     *
@@ -626,10 +626,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,50]
 		-1.203009384246564
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,40]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[40,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,40]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[40,*]
 	units	Angstroms
 	features	30
 	        238.36 3650.22762    3650.15   6.0 1 1 Hg I     *
@@ -683,10 +683,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,40]
 		-1.179494951682358
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,30]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[30,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,30]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[30,*]
 	units	Angstroms
 	features	30
 	        238.31 3650.20587    3650.15   6.0 1 1 Hg I     *
@@ -740,10 +740,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,30]
 		-1.214869230005579
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,20]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[20,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,20]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[20,*]
 	units	Angstroms
 	features	30
 	        238.29 3650.20525    3650.15   6.0 1 1 Hg I     *
@@ -797,10 +797,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,20]
 		-1.207915576343327
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,10]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[10,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,10]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[10,*]
 	units	Angstroms
 	features	30
 	        238.30 3650.24505    3650.15   6.0 1 1 Hg I     *
@@ -854,10 +854,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,10]
 		-1.206512915073552
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,160]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[160,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,160]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[160,*]
 	units	Angstroms
 	features	30
 	        238.50 3650.19096    3650.15   6.0 1 1 Hg I     *
@@ -911,10 +911,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,160]
 		-1.212156484498516
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,170]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[170,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,170]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[170,*]
 	units	Angstroms
 	features	30
 	        238.49 3650.22641    3650.15   6.0 1 1 Hg I     *
@@ -968,10 +968,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,170]
 		-1.199182668459444
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,180]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[180,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,180]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[180,*]
 	units	Angstroms
 	features	30
 	        238.50 3650.23206    3650.15   6.0 1 1 Hg I     *
@@ -1025,10 +1025,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,180]
 		-1.207742895286722
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,190]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[190,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,190]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[190,*]
 	units	Angstroms
 	features	30
 	        238.48 3650.20975    3650.15   6.0 1 1 Hg I     *
@@ -1082,10 +1082,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,190]
 		-1.186505460606039
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,200]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[200,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,200]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[200,*]
 	units	Angstroms
 	features	30
 	        238.46 3650.19986    3650.15   6.0 1 1 Hg I     *
@@ -1139,10 +1139,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,200]
 		-1.205528144983103
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,210]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[210,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,210]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[210,*]
 	units	Angstroms
 	features	30
 	        238.44 3650.20498    3650.15   6.0 1 1 Hg I     *
@@ -1196,10 +1196,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,210]
 		-1.220441572502058
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,220]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[220,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,220]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[220,*]
 	units	Angstroms
 	features	30
 	        238.43 3650.20265    3650.15   6.0 1 1 Hg I     *
@@ -1253,10 +1253,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,220]
 		-1.206788892253587
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,230]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[230,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,230]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[230,*]
 	units	Angstroms
 	features	30
 	        238.39  3650.2102    3650.15   6.0 1 1 Hg I     *
@@ -1310,10 +1310,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,230]
 		-1.213983769740526
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,240]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[240,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,240]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[240,*]
 	units	Angstroms
 	features	30
 	        238.40 3650.22103    3650.15   6.0 1 1 Hg I     *
@@ -1367,10 +1367,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,240]
 		-1.189997314141603
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,250]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[250,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,250]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[250,*]
 	units	Angstroms
 	features	30
 	        238.34 3650.16786    3650.15   6.0 1 1 Hg I     *
@@ -1424,10 +1424,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,250]
 		-1.196399082141844
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,260]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[260,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,260]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[260,*]
 	units	Angstroms
 	features	30
 	        238.30 3650.18675    3650.15   6.0 1 1 Hg I     *
@@ -1481,10 +1481,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,260]
 		-1.167182733749998
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,270]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[270,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,270]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[270,*]
 	units	Angstroms
 	features	30
 	        238.28 3650.20141    3650.15   6.0 1 1 Hg I     *
@@ -1538,10 +1538,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,270]
 		-1.203953613905617
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,280]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[280,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,280]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[280,*]
 	units	Angstroms
 	features	30
 	        238.21 3650.16956    3650.15   6.0 1 1 Hg I     *
@@ -1595,10 +1595,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,280]
 		-1.243250468514669
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,290]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[290,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,290]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[290,*]
 	units	Angstroms
 	features	30
 	        238.20 3650.18132    3650.15   6.0 1 1 Hg I     *
@@ -1652,10 +1652,10 @@ begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,290]
 		-1.260968296617718
 
 # Wed 21:52:51 21-Aug-2019
-begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,300]
+begin	identify arc_20130602_GRIS_300V_free_lSlit1_0arcsec[300,*]
 	id	arc_20130602_GRIS_300V_free_lSlit1_0arcsec
 	task	identify
-	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[*,300]
+	image	arc_20130602_GRIS_300V_free_lSlit1_0arcsec[300,*]
 	units	Angstroms
 	features	30
 	        238.21  3650.1872    3650.15   6.0 1 1 Hg I     *

@@ -8,7 +8,7 @@ dispaxis_to_str = {
 }
 biassec = {
     'efosc': '[3:1010,1026:1029]',
-    'fors2': '[*,981:1025]'
+    'fors2': '[981:1025, *]'
 }
 
 
@@ -60,6 +60,11 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
     iraf.specred.apall.readnoi = _ron
     iraf.specred.apall.gain = _gain
     dispaxi = dispaxis[_instrume]
+    if dispaxi == 1:
+        # TODO: clean implementation of different dispersion directions
+        for img in imglist:
+            iraf.imgeom.imtranspose(img, img)
+        dispaxi = 2
     dispaxi_str = dispaxis_to_str[dispaxi]
     iraf.specred.dispaxi = dispaxi
     iraf.longslit.dispaxi = dispaxi
@@ -96,7 +101,7 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
             else:
                 _trimsec0 = '[100:950,5:1015]'
         elif _instrume == 'fors2':
-           _trimsec0 = '[149:2048,7:306]'
+           _trimsec0 = '[7:306,149:2048]'
         else:
             raise ValueError(
                 '{} is not a supported instrument.'.format(_instrume)
