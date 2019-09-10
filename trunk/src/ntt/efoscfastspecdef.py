@@ -19,6 +19,7 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
     import os
     import re
     import sys
+    from shutil import move
     os.environ["PYRAF_BETA_STATUS"] = "1"
     try:      from astropy.io import fits as pyfits
     except:   import   pyfits
@@ -175,6 +176,8 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
             _skyfile = ntt.__path__[
                 0] + '/standard/ident/sky_' + setup[0] + '_' + setup[1] + '.fits'
             shift = ntt.efoscspec2Ddef.skyfrom2d(img, _skyfile)
+            move('sky_wave_check.pdf',
+                 '{}_sky_wave_check.pdf'.format(timg.split('.fits')[0]))
             print '\n###     check in wavelength performed ...... spectrum shifted by  ' + str(shift) + ' Angstrom \n'
             zro = pyfits.open(img)[0].header.get('CRVAL2')
             ntt.util.updateheader(img, 0, {'CRVAL2': [zro + int(shift), '']})

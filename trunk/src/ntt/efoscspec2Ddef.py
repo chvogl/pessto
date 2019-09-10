@@ -150,21 +150,18 @@ def checkwavelength_arc(xx1, yy1, xx2, yy2, xmin, xmax, inter=True):
         integral.append(integrale)
         _shift.append(shift / 10.)
     result = _shift[integral.index(max(integral))]
-    if inter:
-        # import matplotlib as mpl
-        #   mpl.use("TKAgg")
-        import pylab as pl
-        pl.ion()
-        pl.clf()
-        ratio = np.trapz(yy1, xx1) / np.trapz(yy2, xx2)
-        yy3 = np.array(yy2) * float(ratio)
-        xx4 = xx1 + result
-        pl.plot(xx1, yy1, label='spectrum')
-        pl.plot(xx2, yy3, label='reference sky')
-        pl.plot(xx4, yy1, label='shifted spectrum')
-        pl.legend(numpoints=1, markerscale=1.5)
-        if xmin != '' and xmax != '':
-            pl.xlim(xmin, xmax)
+    import pylab as pl
+    fig = pl.figure()
+    ratio = np.trapz(yy1, xx1) / np.trapz(yy2, xx2)
+    yy3 = np.array(yy2) * float(ratio)
+    xx4 = xx1 + result
+    pl.plot(xx1, yy1, label='spectrum')
+    pl.plot(xx2, yy3, label='reference sky')
+    pl.plot(xx4, yy1, label='shifted spectrum')
+    pl.legend(numpoints=1, markerscale=1.5)
+    if xmin != '' and xmax != '':
+        pl.xlim(xmin, xmax)
+    fig.savefig('sky_wave_check.pdf')
     return result
 
 
