@@ -63,9 +63,13 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
     dispaxi = dispaxis[_instrume]
     if dispaxi == 1:
         # TODO: clean implementation of different dispersion directions
-        for img in imglist:
-            iraf.imgeom.imtranspose(img, img)
+        for i, img in enumerate(imglist):
+            img_rot = img.replace('.fits', '_transposed.fits')
+            iraf.imutil.imdelete(img_rot) # delete files from crashed reductions
+            iraf.imgeom.imtranspose(img, img_rot)
+            imglist[i] = img_rot
         dispaxi = 2
+
     dispaxi_str = dispaxis_to_str[dispaxi]
     iraf.specred.dispaxi = dispaxi
     iraf.longslit.dispaxi = dispaxi
@@ -251,6 +255,11 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
                 imgout = ntt.efoscspec1Ddef.sensfunction(
                     imgex, 'spline3', 6, _inter)
                 result = result + [imgout]
+
+    # Delete transposed images (needed for dispaxis=1)
+    for img in imglist:
+        if '_transposed' in img:
+            iraf.imutil.imdelete(img)
 
     for img in result:
         if img[-5:] == '.fits':
