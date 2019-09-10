@@ -69,7 +69,9 @@ def tofits(outfilename, pixelarray, hdr=None, verbose=True):
 ###################################################
 
 
-def lacos(_input0, output='clean.fits', outmask='mask.fits', gain=1.3, readn=9, xorder=9, yorder=9, sigclip=4.5, sigfrac=0.5, objlim=1, verbose=True, interactive=False):
+def lacos(_input0, output='clean.fits', outmask='mask.fits', gain=1.3, readn=9,
+          xorder=9, yorder=9, sigclip=4.5, sigfrac=0.5, objlim=1,
+          verbose=True, interactive=False, instrument='efosc'):
     # print "LOGX:: Entering `lacos` method/function in %(__file__)s" %
     # globals()
     import ntt
@@ -109,7 +111,13 @@ def lacos(_input0, output='clean.fits', outmask='mask.fits', gain=1.3, readn=9, 
         iraf.imcopy(_input0, output, verbose='no')
 
     delete('_xxx.fits,_yyy.fits')
-    iraf.imcopy(_input0 + '[350:550,*]', '_xxx.fits', verbose='no')
+    if instrument == 'efosc':
+        cc_slice = '[350:550,*]'
+    elif instrument == 'fors2':
+        cc_slice = '[*,*]'
+    else:
+        raise ValueError('{} is not a valid instrument.'.format(instrument))
+    iraf.imcopy(_input0 + cc_slice, '_xxx.fits', verbose='no')
     _input = '_xxx.fits'
 
     arrayinput, headerinput = ntt.cosmics.fromfits(_input, verbose=False)
@@ -229,7 +237,7 @@ def lacos(_input0, output='clean.fits', outmask='mask.fits', gain=1.3, readn=9, 
     if npix == 0:
         stop = yes
       # delete temp files
-    iraf.imcopy('_yyy.fits', output + '[350:550,*]', verbose='no')
+    iraf.imcopy('_yyy.fits', output + cc_slice, verbose='no')
     delete(blk + "," + lapla + "," + deriv2 + "," + med5)
     delete(med3 + "," + med7 + "," + noise + "," + sigmap)
     delete(firstsel + "," + starreject)

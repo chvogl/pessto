@@ -133,8 +133,10 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
 
         if _cosmic:
             # print cosmic rays rejection
-            ntt.cosmics.lacos(img, output='', gain=_gain, readn=_ron, xorder=9, yorder=9, sigclip=4.5, sigfrac=0.5,
-                              objlim=1, verbose=True, interactive=False)
+            ntt.cosmics.lacos(img, output='', gain=_gain, readn=_ron, xorder=9,
+                              yorder=9, sigclip=4.5, sigfrac=0.5,
+                              objlim=1, verbose=True, interactive=False,
+                              instrument=_instrume)
             print '\n### cosmic rays rejections ........ done '
 
         if not arcfile:
