@@ -38,13 +38,13 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
     hdr = ntt.util.readhdr(imglist[0])
     _instrume = hdr.get('INSTRUME').lower()
 
-    iraf.noao(_doprint=0)
-    iraf.imred(_doprint=0)
-    iraf.ccdred(_doprint=0)
-    iraf.twodspec(_doprint=0)
-    iraf.longslit(_doprint=0)
-    iraf.onedspec(_doprint=0)
-    iraf.specred(_doprint=0)
+    iraf.noao(_doprint=0, Stdout=0)
+    iraf.imred(_doprint=0, Stdout=0)
+    iraf.ccdred(_doprint=0, Stdout=0)
+    iraf.twodspec(_doprint=0, Stdout=0)
+    iraf.longslit(_doprint=0, Stdout=0)
+    iraf.onedspec(_doprint=0, Stdout=0)
+    iraf.specred(_doprint=0, Stdout=0)
     toforget = ['ccdproc', 'imcopy', 'specred.apall', 'longslit.identify', 'longslit.reidentify', 'specred.standard',
                 'longslit.fitcoords', 'onedspec.wspectext']
     for t in toforget:

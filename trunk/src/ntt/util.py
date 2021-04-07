@@ -2,8 +2,7 @@ try:      from astropy.io import fits as pyfits
 except:   import pyfits
 
 def ReadAscii2(ascifile):
-    # print "LOGX:: Entering `ReadAscii2` method/function in %(__file__)s" %
-    # globals()
+
     import string
 
     f = open(ascifile, 'r')
@@ -423,8 +422,8 @@ def display_image(img, frame, _z1, _z2, scale, _xcen=0.5, _ycen=0.5, _xsize=1, _
     if glob.glob(img):
         from pyraf import iraf
 
-        iraf.images(_doprint=0)
-        iraf.tv(_doprint=0)
+        iraf.images(_doprint=0, Stdout=0)
+        iraf.tv(_doprint=0, Stdout=0)
         import string
         import os
 
@@ -485,8 +484,7 @@ def display_image(img, frame, _z1, _z2, scale, _xcen=0.5, _ycen=0.5, _xsize=1, _
 
 ###########################################################################
 def searcharc(img, listarc):
-    # print "LOGX:: Entering `searcharc` method/function in %(__file__)s" %
-    # globals()
+
     import ntt
     import glob
     import numpy as np
@@ -634,8 +632,7 @@ def choseclosest(img0, listimg):
 
 
 def readstandard(standardfile):
-    # print "LOGX:: Entering `readstandard` method/function in %(__file__)s" %
-    # globals()
+
     import ntt
     import numpy as np
     import string
@@ -811,8 +808,7 @@ def defswarp(namefile, imgname, _combine, gain=''):
 
 ##########################################################################
 def archivefile(img, overwrite=True):
-    # print "LOGX:: Entering `archivefile` method/function in %(__file__)s" %
-    # globals()
+
     import os
     import ntt
 
@@ -833,12 +829,11 @@ def archivefile(img, overwrite=True):
 
 ##########################################################################
 def airmass(img, overwrite=True, _observatory='lasilla'):
-    # print "LOGX:: Entering `airmass` method/function in %(__file__)s" %
-    # globals()
+
     import ntt
     from pyraf import iraf
 
-    iraf.astutil(_doprint=0)
+    iraf.astutil(_doprint=0, Stdout=0)
     hdr = ntt.util.readhdr(img)
     if readkey3(hdr, 'UTC'):
         _UT = (ntt.util.readkey3(hdr, 'UTC') +
@@ -870,10 +865,9 @@ def airmass(img, overwrite=True, _observatory='lasilla'):
 
 ##########################################################################
 def dvex():
-    # print "LOGX:: Entering `dvex` method/function in %(__file__)s" %
-    # globals()
+
     dv = {}
-    dv['line'] = {'Gr16': 300, 'Gr11': 430, 'Gr13': 200, 'GR': 150, 'GB': 430, 'GRIS_300V': 600}
+    dv['line'] = {'Gr16': 300, 'Gr11': 430, 'Gr13': 200, 'GR': 150, 'GB': 430, 'Gr18': 430, 'Gr20': 430, 'GRIS_300V': 600}
     dv['std'] = {'_t_order': 6, '_t_niter': 50, '_t_sample': '*', '_t_nlost': 20, '_width': 10, '_radius': 10,
                  '_weights': 'variance',
                  '_nsum': 30, '_t_step': 10, '_t_nsum': 10, '_lower': -10, '_upper': 10, '_b_sample': '-40:-20,20:40',
@@ -888,8 +882,7 @@ def dvex():
 ##########################################################################
 
 def phase3header(img):
-    # print "LOGX:: Entering `phase3header` method/function in %(__file__)s" %
-    # globals()
+
     import ntt
     import numpy as np
 
@@ -985,8 +978,7 @@ def name_duplicate(img, nome, ext):
 
 ###############################################################################
 def correctobject(img, coordinatefile):
-    # print "LOGX:: Entering `correctobject` method/function in %(__file__)s"
-    # % globals()
+
     import re
     import ntt
     import numpy as np
@@ -1012,8 +1004,7 @@ def correctobject(img, coordinatefile):
 
 ##########################################################################
 def archivingtar(outputlist, rawfile):
-    # print "LOGX:: Entering `archivingtar` method/function in %(__file__)s" %
-    # globals()
+
     import os
     import re
     import ntt
@@ -1031,8 +1022,7 @@ def archivingtar(outputlist, rawfile):
 
 #################################################################
 def repstringinfile(filein, fileout, string1, string2):
-    # print "LOGX:: Entering `repstringinfile` method/function in
-    # %(__file__)s" % globals()
+
     import re
 
     f = open(filein, 'r')
@@ -1079,8 +1069,7 @@ def StoN(img, ran=50):
 
 
 def StoN2(img, show=False):
-    # print "LOGX:: Entering `StoN2` method/function in %(__file__)s" %
-    # globals()
+
     import numpy as np
     data, hdr0 = pyfits.getdata(img, header=True)
     yy1 = data[0][0]
@@ -1104,8 +1093,7 @@ def StoN2(img, show=False):
 
 ################################################
 def spectraresolution(img):
-    # print "LOGX:: Entering `spectraresolution` method/function in
-    # %(__file__)s" % globals()
+
     import ntt
 
     hdr = ntt.util.readhdr(img)
@@ -1122,6 +1110,11 @@ def spectraresolution(img):
     risoluzioni['efosc']['Free', 'Gr13', 'slit1.0'] = 19.
     risoluzioni['efosc']['Free', 'Gr11', 'slit1.5'] = 22.
     risoluzioni['efosc']['Free', 'Gr11', 'slit1.0'] = 14.
+
+    risoluzioni['efosc']['Free', 'Gr18', 'slit1.0'] = 8.19  # taken from Table 5 of the Manual.
+    risoluzioni['efosc']['Free', 'Gr20', 'slit1.0'] = 2.0  # taken from Table 5 of the Manual, although this is actually for the 0.5" slit.
+    risoluzioni['efosc']['GG495', 'Gr20', 'slit1.0'] = 2.0  # taken to be the same as Gr20 without filter (Free), for no particular reason.
+
     risoluzioni['efosc']['OG530', 'Gr16', 'slit1.5'] = 22.
     risoluzioni['efosc']['OG530', 'Gr16', 'slit1.0'] = 16.
     risoluzioni['sofi']['GBF', 'GB', 'long_slit_1'] = 27.
@@ -1140,8 +1133,7 @@ def spectraresolution(img):
 
 
 def spectraresolution2(img0, ww=25):
-    # print "LOGX:: Entering `spectraresolution2` method/function in
-    # %(__file__)s" % globals()
+
     import string
     import re
     import ntt
@@ -1194,7 +1186,8 @@ def spectraresolution2(img0, ww=25):
     ff.write(cursor)
     ff.close()
     from pyraf import iraf
-
+    from iraf import onedspec
+    
     aaa = iraf.noao.onedspec.bplot(
         'new3.fits', cursor='_cursor', spec2='', new_ima='', overwri='yes', Stdout=1)
     fw = []
@@ -1208,8 +1201,7 @@ def spectraresolution2(img0, ww=25):
 ##################################################
 
 def limmag(img):
-    # print "LOGX:: Entering `limmag` method/function in %(__file__)s" %
-    # globals()
+
     import ntt
     import math
     import os
@@ -1303,13 +1295,12 @@ def extractspectrum(img, dv, _ext_trace, _dispersionline, _interactive,
     MJDtoday = 55927 + (datetime.date.today() - datetime.date(2012, 01, 01)).days
     from pyraf import iraf
 
-    iraf.noao(_doprint=0)
-    iraf.imred(_doprint=0)
-    iraf.specred(_doprint=0)
+    iraf.noao(_doprint=0, Stdout=0)
+    iraf.imred(_doprint=0, Stdout=0)
+    iraf.specred(_doprint=0, Stdout=0)
     toforget = ['specred.apall', 'specred.transform']
     for t in toforget:
         iraf.unlearn(t)
-
     dv = ntt.dvex()
     hdr = ntt.util.readhdr(img)
     _gain = ntt.util.readkey3(hdr, 'gain')
