@@ -110,7 +110,7 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
         elif _instrume == 'fors2':
             if _grism0 == 'GRIS_300V':
                 _trimsec0 = '[7:306,149:2048]'  # transposed file!
-            elif if _grism0 == 'GRIS_300I':
+            elif _grism0 == 'GRIS_300I':
                 _trimsec0 = '[7:306,71:1720]'  # transposed file!
             else:
                 _trimsec0 = '[7:306,71:2048]'  # transposed file!
