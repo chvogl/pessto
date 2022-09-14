@@ -227,7 +227,7 @@ def readkey3(hdr, keyword):
         useful_keys = {'object': 'OBJCAT',
                        'date-obs': 'DATE-OBS',
                        'ut': 'DATE-OBS',
-                       'RA': 'RA' / 24. * 360.,
+                       'RA': 'RA',
                        'DEC': 'DEC',
                        'datamin': -100,
                        'datamax': 65000,
@@ -279,6 +279,9 @@ def readkey3(hdr, keyword):
                     pass
             elif keyword == 'JD':
                 value = value + 0.5
+            elif keyword == 'RA':
+                if _instrume == 'lrs':
+                    value = value / 24. * 360.
             elif keyword == 'instrume':
                 value = value.lower()
         if type(value) == str:
