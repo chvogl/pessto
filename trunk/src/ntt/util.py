@@ -234,7 +234,7 @@ def readkey3(hdr, keyword):
                        #'observer': aa + 'ESO OBS OBSERVER',
                        'exptime': 'EXPTIME',
                        'instrume': 'INSTRUME',
-                       #'JD': 'MJD-OBS',
+                       'JD': 0,
                        'lamp': 'LMP_ID',
                        #'esoprog': aa + 'ESO OBS PROG ID',
                        'filter': 'FLT_ID',
