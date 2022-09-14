@@ -527,12 +527,16 @@ def searcharc(img, listarc):
     _instrume = ntt.util.readkey3(hdr, 'instrume')
     grism0 = ntt.util.readkey3(hdr, 'grism')
     filter0 = ntt.util.readkey3(hdr, 'filter')
+    if _instrume == 'lrs':
+        filter0_path_key = filter0.lower()
+    else:
+        filter0_path_key = filter0
     slit0 = ntt.util.readkey3(hdr, 'slit')
     if slit0 == 'slit5.0':
         slit0 = 'slit1.0'
     if not listarc:
         directory = ntt.__path__[
-            0] + '/archive/' + str(_instrume) + '/arc/' + grism0 + '/' + filter0 + '/' + slit0
+            0] + '/archive/' + str(_instrume) + '/arc/' + grism0 + '/' + filter0_path_key + '/' + slit0
         listarc = glob.glob(directory + '/*fits')
     else:
         directory = ''
