@@ -116,9 +116,9 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
                 _trimsec0 = '[7:306,71:2048]'  # transposed file!
         elif _instrume == 'lrs':
             if _grism0 == 'LR-R':
-                _trimsec0 == '[851:1200,91:1890]'  # transposed file!
+                _trimsec0 = '[851:1200,91:1890]'  # transposed file!
             else:
-                    _trimsec0 == '[851:1200,50:2097]'  # transposed file!
+                _trimsec0 = '[851:1200,50:2097]'  # transposed file!
         else:
             raise ValueError(
                 '{} is not a supported instrument.'.format(_instrume)
