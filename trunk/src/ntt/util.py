@@ -223,6 +223,36 @@ def readkey3(hdr, keyword):
                        'slit': aa + 'ESO INS SLIT NAME',
                        'obsmode': aa + 'ESO DPR CATG',
                        'telescop': 'TELESCOP'}
+    elif _instrume == 'lrs':
+        useful_keys = {'object': 'OBJCAT',
+                       'date-obs': 'DATE-OBS',
+                       'ut': 'DATE-OBS',
+                       'RA': 'RA' / 24. * 360.,
+                       'DEC': 'DEC',
+                       'datamin': -100,
+                       'datamax': 65000,
+                       #'observer': aa + 'ESO OBS OBSERVER',
+                       'exptime': 'EXPTIME',
+                       'instrume': 'INSTRUME',
+                       #'JD': 'MJD-OBS',
+                       'lamp': 'LMP_ID',
+                       #'esoprog': aa + 'ESO OBS PROG ID',
+                       'filter': 'FLT_ID',
+                       'grism': 'GRM_ID',
+                       #'catg': aa + 'ESO DPR CATG',
+                       #'tech': aa + 'ESO DPR TECH',
+                       'type': 'OBS-TYPE',
+                       'gain': 0.97,
+                       'ron': 9.,
+                       #'esoid': aa + 'ESO OBS ID',
+                       'binx': 'CRDELT1',
+                       'speed': 'DETRDMOD',
+                       'posang': 'POSANG',
+                       'airmass': 'AIRMASS',
+                       #'airmass1': aa + 'ESO TEL AIRM END',
+                       'slit': 'SLT_ID',
+                       #'obsmode': aa + 'ESO DPR CATG',
+                       'telescop': 'TELESCOP'}
     else:
         useful_keys = {'object': 'OBJECT',
                        'date-obs': 'DATE-OBS'}
@@ -867,7 +897,7 @@ def airmass(img, overwrite=True, _observatory='lasilla'):
 def dvex():
 
     dv = {}
-    dv['line'] = {'Gr16': 300, 'Gr11': 430, 'Gr13': 200, 'GR': 150, 'GB': 430, 'Gr18': 430, 'Gr20': 430, 'GRIS_300V': 600}
+    dv['line'] = {'Gr16': 300, 'Gr11': 430, 'Gr13': 200, 'GR': 150, 'GB': 430, 'Gr18': 430, 'Gr20': 430, 'GRIS_300V': 600, 'LR-R': 800}
     dv['std'] = {'_t_order': 6, '_t_niter': 50, '_t_sample': '*', '_t_nlost': 20, '_width': 10, '_radius': 10,
                  '_weights': 'variance',
                  '_nsum': 30, '_t_step': 10, '_t_nsum': 10, '_lower': -10, '_upper': 10, '_b_sample': '-40:-20,20:40',

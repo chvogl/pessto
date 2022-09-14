@@ -1,6 +1,7 @@
 dispaxis = {
     'fors2': 1,
-    'efosc': 2
+    'efosc': 2,
+    'lrs': 1
 }
 dispaxis_to_str = {
     2: 'column',
@@ -8,7 +9,8 @@ dispaxis_to_str = {
 }
 biassec = {
     'efosc': '[3:1010,1026:1029]',
-    'fors2': '[981:1025, *]'
+    'fors2': '[981:1025, *]',
+    'lrs': '[15:49, *]'
 }
 
 
@@ -80,9 +82,9 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
     iraf.set(direc=ntt.__path__[0] + '/')
     for img in imglist:
         hdr = ntt.util.readhdr(img)
-        _tech = ntt.util.readkey3(hdr, 'tech')
-        if _tech != 'SPECTRUM':
-            sys.exit('error: ' + str(img) + ' is not a spectrum ')
+    #    _tech = ntt.util.readkey3(hdr, 'tech')
+    #    if _tech != 'SPECTRUM':
+    #        sys.exit('error: ' + str(img) + ' is not a spectrum ')
         print '\n####  image name = ' + img + '\n'
         _grism0 = readkey3(hdr, 'grism')
         _filter0 = readkey3(hdr, 'filter')
@@ -106,7 +108,17 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
             else:
                 _trimsec0 = '[100:950,5:1015]'
         elif _instrume == 'fors2':
-           _trimsec0 = '[7:306,149:2048]'
+            if _grism0 == 'GRIS_300V':
+                _trimsec0 = '[7:306,149:2048]'  # transposed file!
+            elif if _grism0 == 'GRIS_300I':
+                _trimsec0 = '[7:306,71:1720]'  # transposed file!
+            else:
+                _trimsec0 = '[7:306,71:2048]'  # transposed file!
+        elif _instrume == 'lrs':
+            if _grism0 == 'LR-R':
+                _trimsec0 == '[851:1200,91:1890]'  # transposed file!
+            else:
+                    _trimsec0 == '[851:1200,50:2097]'  # transposed file!
         else:
             raise ValueError(
                 '{} is not a supported instrument.'.format(_instrume)
@@ -224,8 +236,18 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
                 if sensfile:
                     imgf = re.sub('.fits', '_f.fits', img)
                     _extinctdir = 'direc$standard/extinction/'
-                    _extinction = 'extinction_lasilla.dat' # TODO: paranal
-                    _observatory = 'lasilla'
+                    if _instrume == 'efosc':
+                        _extinction = 'extinction_lasilla.dat'
+                        _observatory = 'lasilla'
+                    elif _instrume == 'fors2':
+                        _extinction = 'extinction_paranal.dat'
+                        _observatory = 'paranal'
+                    elif _instrume == 'lrs':
+                        _extinction = 'extinction_lapalma.dat'
+                        _observatory = 'lapalma'
+                    else:
+                        _extinction = 'extinction_paranal.dat'
+                        _observatory = 'paranal' 
                     _exptime = readkey3(hdrt, 'exptime')
                     _airmass = readkey3(hdrt, 'airmass')
                     ntt.util.delete(imgf)

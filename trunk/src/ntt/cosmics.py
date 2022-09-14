@@ -115,6 +115,8 @@ def lacos(_input0, output='clean.fits', outmask='mask.fits', gain=1.3, readn=9,
         cc_slice = '[350:550,*]'
     elif instrument == 'fors2':
         cc_slice = '[*,*]'
+    elif instrument == 'lrs':
+        cc_slice = '[*,*]'
     else:
         raise ValueError('{} is not a valid instrument.'.format(instrument))
     iraf.imcopy(_input0 + cc_slice, '_xxx.fits', verbose='no')

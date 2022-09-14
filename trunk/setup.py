@@ -78,6 +78,7 @@ setup(
                            "archive/efosc/flat/*/*fits", "archive/efosc/sens/*/*/*fits", "archive/efosc/bias/*fits",\
                            "archive/sofi/illumination/*/*fits", "archive/sofi/flat/*/*fits",\
                            "archive/efosc/fringing/*/*fits", "archive/sofi/arc/*/*/*/*fits", "archive/sofi/arc/*/*/*/*/id*",
-                           "archive/fors2/sens/*/*/*fits", "archive/fors2/arc/*/*/*/*fits", "archive/fors2/arc/*/*/*/*/id*"]}
+                           "archive/fors2/sens/*/*/*fits", "archive/fors2/arc/*/*/*/*fits", "archive/fors2/arc/*/*/*/*/id*",
+                           "archive/lrs/sens/*/*/*fits", "archive/lrs/arc/*/*/*/*fits", "archive/lrs/arc/*/*/*/*/id*"]}
     #    data_files = [('',["standard/*.txt"])]
 )
