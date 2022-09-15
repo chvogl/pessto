@@ -164,7 +164,10 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
                           string.split(arcfile, '/')[-1])
                 arcfile = string.split(arcfile, '/')[-1]
             arcref = string.split(arcref, '/')[-1]
-            section = dispaxi_str + ' 10'
+            if _instrume == 'lrs':
+                section = dispaxi_str + ' 15'
+            else:
+                section = dispaxi_str + ' 10'
             if arcref:
                 os.system('cp ' + arcref + ' .')
                 arcref = string.split(arcref, '/')[-1]
