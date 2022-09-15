@@ -594,10 +594,16 @@ def searchsens(img, listsens):
         for sens in listsens:
             hdrs = ntt.util.readhdr(sens)
             JDsens = ntt.util.readkey3(hdrs, 'JD')
+            if not JDsens:
+                JDsens = 0.0
             filter1 = ntt.util.readkey3(hdrs, 'filter') \
                 if ntt.util.readkey3(hdrs, 'filter') else ntt.util.readkey3(hdrs, 'FILTER')
+            if not filter1:
+                filter1 = filter0
             grism1 = ntt.util.readkey3(hdrs, 'grism') \
                 if ntt.util.readkey3(hdrs, 'grism') else ntt.util.readkey3(hdrs, 'GRISM')
+            if not grism1:
+                grism1 = grism0
             if filter0 == filter1 and grism0 == grism1:
                 goodlist.append(sens)
                 distance.append(np.abs(JD - JDsens))
