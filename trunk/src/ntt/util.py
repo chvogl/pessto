@@ -577,9 +577,13 @@ def searchsens(img, listsens):
     _instrume = ntt.util.readkey3(hdr, 'instrume')
     grism0 = ntt.util.readkey3(hdr, 'grism')
     filter0 = ntt.util.readkey3(hdr, 'filter')
+    if _instrume == 'lrs':
+        filter0_path_key = filter0.lower()
+    else:
+        filter0_path_key = filter0
     if not listsens:
         directory = ntt.__path__[0] + '/archive/' + \
-            str(_instrume) + '/sens/' + grism0 + '/' + filter0
+            str(_instrume) + '/sens/' + grism0 + '/' + filter0_path_key
         listsens = glob.glob(directory + '/*fits')
     else:
         directory = ''
