@@ -300,6 +300,8 @@ def readkey3(hdr, keyword):
             except:
                 sys.exit('Warning: keyword not valid')
         #    if type(value) == str:    value=re.sub('\#','',value)
+        if keyword == 'tech':
+            value = 'SPECTRUM'
     return value
 
 
@@ -575,9 +577,13 @@ def searchsens(img, listsens):
     _instrume = ntt.util.readkey3(hdr, 'instrume')
     grism0 = ntt.util.readkey3(hdr, 'grism')
     filter0 = ntt.util.readkey3(hdr, 'filter')
+    if _instrume == 'lrs':
+        filter0_path_key = filter0.lower()
+    else:
+        filter0_path_key = filter0
     if not listsens:
         directory = ntt.__path__[0] + '/archive/' + \
-            str(_instrume) + '/sens/' + grism0 + '/' + filter0
+            str(_instrume) + '/sens/' + grism0 + '/' + filter0_path_key
         listsens = glob.glob(directory + '/*fits')
     else:
         directory = ''
@@ -588,10 +594,16 @@ def searchsens(img, listsens):
         for sens in listsens:
             hdrs = ntt.util.readhdr(sens)
             JDsens = ntt.util.readkey3(hdrs, 'JD')
+            if not JDsens:
+                JDsens = 0.0
             filter1 = ntt.util.readkey3(hdrs, 'filter') \
                 if ntt.util.readkey3(hdrs, 'filter') else ntt.util.readkey3(hdrs, 'FILTER')
+            if not filter1:
+                filter1 = filter0
             grism1 = ntt.util.readkey3(hdrs, 'grism') \
                 if ntt.util.readkey3(hdrs, 'grism') else ntt.util.readkey3(hdrs, 'GRISM')
+            if not grism1:
+                grism1 = grism0
             if filter0 == filter1 and grism0 == grism1:
                 goodlist.append(sens)
                 distance.append(np.abs(JD - JDsens))
