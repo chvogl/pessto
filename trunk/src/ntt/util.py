@@ -300,6 +300,8 @@ def readkey3(hdr, keyword):
             except:
                 sys.exit('Warning: keyword not valid')
         #    if type(value) == str:    value=re.sub('\#','',value)
+        if keyword == 'tech':
+            value = 'SPECTRUM'
     return value
 
 
