@@ -1,8 +1,8 @@
 # Wed 18:54:43 14-Sep-2022
-begin	identify NeAr_noflat[*,200]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[200,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,200]
+	image	NeHgAr_20220716_1_5arcsec[200,*]
 	units	Angstroms
 	features	37
 	        280.06 5460.72675    5460.75   6.0 1 1 Hg I     *
@@ -63,10 +63,10 @@ begin	identify NeAr_noflat[*,200]
 		-0.1808894071809573
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,180]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[180,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,180]
+	image	NeHgAr_20220716_1_5arcsec[180,*]
 	units	Angstroms
 	features	37
 	        280.02 5460.72453    5460.75   6.0 1 1 Hg I     *
@@ -127,10 +127,10 @@ begin	identify NeAr_noflat[*,180]
 		-0.1086693262796617
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,160]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[160,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,160]
+	image	NeHgAr_20220716_1_5arcsec[160,*]
 	units	Angstroms
 	features	37
 	        279.91 5460.71919    5460.75   6.0 1 1 Hg I     *
@@ -191,10 +191,10 @@ begin	identify NeAr_noflat[*,160]
 		-0.2044258963555536
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,140]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[140,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,140]
+	image	NeHgAr_20220716_1_5arcsec[140,*]
 	units	Angstroms
 	features	37
 	        279.97 5460.70819    5460.75   6.0 1 1 Hg I     *
@@ -255,10 +255,10 @@ begin	identify NeAr_noflat[*,140]
 		-0.08884622045863432
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,120]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[120,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,120]
+	image	NeHgAr_20220716_1_5arcsec[120,*]
 	units	Angstroms
 	features	37
 	        279.96 5460.71294    5460.75   6.0 1 1 Hg I     *
@@ -319,10 +319,10 @@ begin	identify NeAr_noflat[*,120]
 		-0.1869705275515915
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,100]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[100,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,100]
+	image	NeHgAr_20220716_1_5arcsec[100,*]
 	units	Angstroms
 	features	37
 	        279.97 5460.70111    5460.75   6.0 1 1 Hg I     *
@@ -383,10 +383,10 @@ begin	identify NeAr_noflat[*,100]
 		-0.08101873949637285
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,80]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[80,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,80]
+	image	NeHgAr_20220716_1_5arcsec[80,*]
 	units	Angstroms
 	features	37
 	        280.00 5460.69802    5460.75   6.0 1 1 Hg I     *
@@ -447,10 +447,10 @@ begin	identify NeAr_noflat[*,80]
 		-0.06114630217116244
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,60]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[60,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,60]
+	image	NeHgAr_20220716_1_5arcsec[60,*]
 	units	Angstroms
 	features	37
 	        279.90 5460.69691    5460.75   6.0 1 1 Hg I     *
@@ -511,10 +511,10 @@ begin	identify NeAr_noflat[*,60]
 		-0.1332558161088802
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,40]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[40,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,40]
+	image	NeHgAr_20220716_1_5arcsec[40,*]
 	units	Angstroms
 	features	37
 	        279.96 5460.66679    5460.75   6.0 1 1 Hg I     *
@@ -575,10 +575,10 @@ begin	identify NeAr_noflat[*,40]
 		0.02596673596066496
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,20]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[20,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,20]
+	image	NeHgAr_20220716_1_5arcsec[20,*]
 	units	Angstroms
 	features	37
 	        280.06 5460.67648    5460.75   6.0 1 1 Hg I     *
@@ -639,10 +639,10 @@ begin	identify NeAr_noflat[*,20]
 		-0.1462706676583891
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,220]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[220,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,220]
+	image	NeHgAr_20220716_1_5arcsec[220,*]
 	units	Angstroms
 	features	37
 	        279.96 5460.71578    5460.75   6.0 1 1 Hg I     *
@@ -703,10 +703,10 @@ begin	identify NeAr_noflat[*,220]
 		-0.1618184358887809
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,240]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[240,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,240]
+	image	NeHgAr_20220716_1_5arcsec[240,*]
 	units	Angstroms
 	features	37
 	        280.03 5460.70331    5460.75   6.0 1 1 Hg I     *
@@ -767,10 +767,10 @@ begin	identify NeAr_noflat[*,240]
 		-0.1513763457242188
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,260]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[260,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,260]
+	image	NeHgAr_20220716_1_5arcsec[260,*]
 	units	Angstroms
 	features	37
 	        280.09 5460.68956    5460.75   6.0 1 1 Hg I     *
@@ -831,10 +831,10 @@ begin	identify NeAr_noflat[*,260]
 		-0.07052798628467103
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,280]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[280,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,280]
+	image	NeHgAr_20220716_1_5arcsec[280,*]
 	units	Angstroms
 	features	37
 	        279.99  5460.7089    5460.75   6.0 1 1 Hg I     *
@@ -895,10 +895,10 @@ begin	identify NeAr_noflat[*,280]
 		-0.1218516500916973
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,300]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[300,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,300]
+	image	NeHgAr_20220716_1_5arcsec[300,*]
 	units	Angstroms
 	features	37
 	        279.91 5460.71335    5460.75   6.0 1 1 Hg I     *
@@ -959,10 +959,10 @@ begin	identify NeAr_noflat[*,300]
 		-0.1387914006054617
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,320]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[320,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,320]
+	image	NeHgAr_20220716_1_5arcsec[320,*]
 	units	Angstroms
 	features	37
 	        280.01 5460.72764    5460.75   6.0 1 1 Hg I     *
@@ -1023,10 +1023,10 @@ begin	identify NeAr_noflat[*,320]
 		-0.1591347859972335
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,340]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[340,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,340]
+	image	NeHgAr_20220716_1_5arcsec[340,*]
 	units	Angstroms
 	features	37
 	        279.83 5460.67996    5460.75   6.0 1 1 Hg I     *
@@ -1087,10 +1087,10 @@ begin	identify NeAr_noflat[*,340]
 		-0.1429764864167396
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,360]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[360,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,360]
+	image	NeHgAr_20220716_1_5arcsec[360,*]
 	units	Angstroms
 	features	37
 	        279.74 5460.70251    5460.75   6.0 1 1 Hg I     *
@@ -1151,10 +1151,10 @@ begin	identify NeAr_noflat[*,360]
 		-0.2317673843033405
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,380]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[380,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,380]
+	image	NeHgAr_20220716_1_5arcsec[380,*]
 	units	Angstroms
 	features	37
 	        279.98 5460.75192    5460.75   6.0 1 1 Hg I     *
@@ -1215,10 +1215,10 @@ begin	identify NeAr_noflat[*,380]
 		-0.1837856468904388
 
 # Wed 18:55:20 14-Sep-2022
-begin	identify NeAr_noflat[*,400]
-	id	NeAr_noflat
+begin	identify NeHgAr_20220716_1_5arcsec[400,*]
+	id	NeHgAr_20220716_1_5arcsec
 	task	identify
-	image	NeAr_noflat[*,400]
+	image	NeHgAr_20220716_1_5arcsec[400,*]
 	units	Angstroms
 	features	37
 	        279.84 5460.66077    5460.75   6.0 1 1 Hg I     *

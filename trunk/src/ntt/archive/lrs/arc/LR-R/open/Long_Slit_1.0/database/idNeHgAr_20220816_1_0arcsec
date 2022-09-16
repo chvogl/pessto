@@ -1,8 +1,8 @@
 # Wed 18:37:59 14-Sep-2022
-begin	identify NeHgAr_noflat[*,175]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[175,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,175]
+	image	NeHgAr_20220816_1_0arcsec[175,*]
 	units	Angstroms
 	features	43
 	        275.96 5460.71355    5460.75   4.0 1 1 Hg I     *
@@ -69,10 +69,10 @@ begin	identify NeHgAr_noflat[*,175]
 		-0.2159849828096787
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,155]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[155,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,155]
+	image	NeHgAr_20220816_1_0arcsec[155,*]
 	units	Angstroms
 	features	43
 	        276.06 5460.73114    5460.75   4.0 1 1 Hg I     *
@@ -139,10 +139,10 @@ begin	identify NeHgAr_noflat[*,155]
 		-0.1302158989564506
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,135]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[135,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,135]
+	image	NeHgAr_20220816_1_0arcsec[135,*]
 	units	Angstroms
 	features	43
 	        276.13 5460.70936    5460.75   4.0 1 1 Hg I     *
@@ -209,10 +209,10 @@ begin	identify NeHgAr_noflat[*,135]
 		-0.1233911187664568
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,115]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[115,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,115]
+	image	NeHgAr_20220816_1_0arcsec[115,*]
 	units	Angstroms
 	features	43
 	        276.14 5460.68719    5460.75   4.0 1 1 Hg I     *
@@ -279,10 +279,10 @@ begin	identify NeHgAr_noflat[*,115]
 		-0.06180684745996464
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,95]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[95,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,95]
+	image	NeHgAr_20220816_1_0arcsec[95,*]
 	units	Angstroms
 	features	43
 	        276.23 5460.75508    5460.75   4.0 1 1 Hg I     *
@@ -349,10 +349,10 @@ begin	identify NeHgAr_noflat[*,95]
 		-0.1269871119249182
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,75]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[75,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,75]
+	image	NeHgAr_20220816_1_0arcsec[75,*]
 	units	Angstroms
 	features	43
 	        276.28 5460.73612    5460.75   4.0 1 1 Hg I     *
@@ -419,10 +419,10 @@ begin	identify NeHgAr_noflat[*,75]
 		-0.007310182061613725
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,55]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[55,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,55]
+	image	NeHgAr_20220816_1_0arcsec[55,*]
 	units	Angstroms
 	features	43
 	        276.28   5460.713    5460.75   4.0 1 1 Hg I     *
@@ -489,10 +489,10 @@ begin	identify NeHgAr_noflat[*,55]
 		0.002102733478617736
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,35]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[35,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,35]
+	image	NeHgAr_20220816_1_0arcsec[35,*]
 	units	Angstroms
 	features	43
 	        276.27 5460.72734    5460.75   4.0 1 1 Hg I     *
@@ -559,10 +559,10 @@ begin	identify NeHgAr_noflat[*,35]
 		-0.0954892554963574
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,15]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[15,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,15]
+	image	NeHgAr_20220816_1_0arcsec[15,*]
 	units	Angstroms
 	features	43
 	        276.10 5460.68723    5460.75   4.0 1 1 Hg I     *
@@ -629,10 +629,10 @@ begin	identify NeHgAr_noflat[*,15]
 		-0.1390880429391779
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,195]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[195,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,195]
+	image	NeHgAr_20220816_1_0arcsec[195,*]
 	units	Angstroms
 	features	43
 	        276.14 5460.70018    5460.75   4.0 1 1 Hg I     *
@@ -699,10 +699,10 @@ begin	identify NeHgAr_noflat[*,195]
 		-0.0128508661012961
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,215]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[215,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,215]
+	image	NeHgAr_20220816_1_0arcsec[215,*]
 	units	Angstroms
 	features	43
 	        276.09 5460.70461    5460.75   4.0 1 1 Hg I     *
@@ -769,10 +769,10 @@ begin	identify NeHgAr_noflat[*,215]
 		-0.06660887726571784
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,235]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[235,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,235]
+	image	NeHgAr_20220816_1_0arcsec[235,*]
 	units	Angstroms
 	features	43
 	        276.10 5460.64275    5460.75   4.0 1 1 Hg I     *
@@ -839,10 +839,10 @@ begin	identify NeHgAr_noflat[*,235]
 		0.09218588242638787
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,255]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[255,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,255]
+	image	NeHgAr_20220816_1_0arcsec[255,*]
 	units	Angstroms
 	features	43
 	        275.84 5460.61002    5460.75   4.0 1 1 Hg I     *
@@ -909,10 +909,10 @@ begin	identify NeHgAr_noflat[*,255]
 		0.0145082379519926
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,275]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[275,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,275]
+	image	NeHgAr_20220816_1_0arcsec[275,*]
 	units	Angstroms
 	features	43
 	        275.97 5460.60553    5460.75   4.0 1 1 Hg I     *
@@ -979,10 +979,10 @@ begin	identify NeHgAr_noflat[*,275]
 		0.1341427805829579
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,295]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[295,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,295]
+	image	NeHgAr_20220816_1_0arcsec[295,*]
 	units	Angstroms
 	features	43
 	        276.00 5460.59471    5460.75   4.0 1 1 Hg I     *
@@ -1049,10 +1049,10 @@ begin	identify NeHgAr_noflat[*,295]
 		0.1683054647496842
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,315]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[315,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,315]
+	image	NeHgAr_20220816_1_0arcsec[315,*]
 	units	Angstroms
 	features	43
 	        275.99  5460.6284    5460.75   4.0 1 1 Hg I     *
@@ -1119,10 +1119,10 @@ begin	identify NeHgAr_noflat[*,315]
 		0.07212495720982885
 
 # Wed 18:38:26 14-Sep-2022
-begin	identify NeHgAr_noflat[*,335]
-	id	NeHgAr_noflat
+begin	identify NeHgAr_20220816_1_0arcsec[335,*]
+	id	NeHgAr_20220816_1_0arcsec
 	task	identify
-	image	NeHgAr_noflat[*,335]
+	image	NeHgAr_20220816_1_0arcsec[335,*]
 	units	Angstroms
 	features	43
 	        276.03 5460.69867    5460.75   4.0 1 1 Hg I     *
