@@ -165,7 +165,12 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
                 arcfile = string.split(arcfile, '/')[-1]
             arcref = string.split(arcref, '/')[-1]
             if _instrume == 'lrs':
-                section = dispaxi_str + ' 15'
+                if _slit0 == 'Long_Slit_1.0':
+                    section = dispaxi_str + ' 15'
+                elif _slit0 == 'Long_Slit_1.5':
+                    section = dispaxi_str + ' 20'
+                else:
+                    raise ValueError('Slit not supported!')
             else:
                 section = dispaxi_str + ' 10'
             if arcref:
