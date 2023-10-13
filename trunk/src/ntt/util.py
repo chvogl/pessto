@@ -118,6 +118,8 @@ def readkey3(hdr, keyword):
     import sys
     import re
     import string
+    import astropy.units as u
+    from astropy.coordinates import SkyCoord
     try:
         if int( re.sub('\.', '', str(pyfits.__version__))[:2] ) <= 30:
             aa = 'HIERARCH '
@@ -253,6 +255,36 @@ def readkey3(hdr, keyword):
                        'slit': 'SLT_ID',
                        #'obsmode': aa + 'ESO DPR CATG',
                        'telescop': 'TELESCOP'}
+    elif _instrume == 'afosc':
+        useful_keys = {'object': 'OBJECT',
+                       'date-obs': 'DATE-OBS',
+                       'ut': 'DATE-OBS',
+                       'RA': 'RA',
+                       'DEC': 'DEC',
+                       'datamin': -100,
+                       'datamax': 65000,
+                       'observer': 'OBSERVER',
+                       'exptime': 'EXPTIME',
+                       'instrume': 'INSTRUME',
+                       'JD': 'MJD',
+                       'lamp': 'LAMP',
+                       #'esoprog': aa + 'ESO OBS PROG ID',
+                       'filter': 'FILTER',
+                       'grism': 'GRAT_TYP',
+                       #'catg': aa + 'ESO DPR CATG',
+                       #'tech': aa + 'ESO DPR TECH',
+                       'type': 'IMAGETYP',
+                       'gain': 'GAIN',
+                       'ron': 'RDNOISE',
+                       #'esoid': aa + 'ESO OBS ID',
+                       'binx': 'BINX',
+                       'speed': 'OUTMODE',
+                       'posang': 'ROTANGLE',
+                       'airmass': 'AIRMASS',
+                       #'airmass1': aa + 'ESO TEL AIRM END',
+                       'slit': 'SLIT',
+                       #'obsmode': aa + 'ESO DPR CATG',
+                       'telescop': 'TELESCOP'}
     else:
         useful_keys = {'object': 'OBJECT',
                        'date-obs': 'DATE-OBS'}
@@ -282,6 +314,11 @@ def readkey3(hdr, keyword):
             elif keyword == 'RA':
                 if _instrume == 'lrs':
                     value = value / 24. * 360.
+                if _instrume == 'afosc':
+                    value = SkyCoord(value, hdr.get('DEC'), unit=(u.hourangle, u.deg)).ra.value
+            elif keyword == 'DEC':
+                if _instrume == 'afosc':
+                    value = SkyCoord(hdr.get('RA'), value, unit=(u.hourangle, u.deg)).dec.value
             elif keyword == 'instrume':
                 value = value.lower()
         if type(value) == str:
@@ -916,7 +953,7 @@ def airmass(img, overwrite=True, _observatory='lasilla'):
 def dvex():
 
     dv = {}
-    dv['line'] = {'Gr16': 300, 'Gr11': 430, 'Gr13': 200, 'GR': 150, 'GB': 430, 'Gr18': 430, 'Gr20': 430, 'GRIS_300V': 600, 'GRIS_300I': 400, 'LR-R': 800}
+    dv['line'] = {'Gr16': 300, 'Gr11': 430, 'Gr13': 200, 'GR': 150, 'GB': 430, 'Gr18': 430, 'Gr20': 430, 'GRIS_300V': 600, 'GRIS_300I': 400, 'LR-R': 800, 'GR04': 250, 'VPH6': 600, 'VPH7': 400}
     dv['std'] = {'_t_order': 6, '_t_niter': 50, '_t_sample': '*', '_t_nlost': 20, '_width': 10, '_radius': 10,
                  '_weights': 'variance',
                  '_nsum': 30, '_t_step': 10, '_t_nsum': 10, '_lower': -10, '_upper': 10, '_b_sample': '-40:-20,20:40',

@@ -1,7 +1,8 @@
 dispaxis = {
     'fors2': 1,
     'efosc': 2,
-    'lrs': 1
+    'lrs': 1,
+    'afosc': 2
 }
 dispaxis_to_str = {
     2: 'column',
@@ -10,7 +11,8 @@ dispaxis_to_str = {
 biassec = {
     'efosc': '[3:1010,1026:1029]',
     'fors2': '[981:1025, *]',
-    'lrs': '[15:49, *]'
+    'lrs': '[15:49, *]',
+    'afosc': '[1:9,*]'
 }
 
 
@@ -22,6 +24,7 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
     import re
     import sys
     from shutil import move
+    from astropy.io import fits
     os.environ["PYRAF_BETA_STATUS"] = "1"
     try:      from astropy.io import fits as pyfits
     except:   import   pyfits
@@ -37,8 +40,13 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
         _inter = 'YES'
     from pyraf import iraf
 
+
     hdr = ntt.util.readhdr(imglist[0])
     _instrume = hdr.get('INSTRUME').lower()
+    if _instrume == 'AFOSC + Andor iKon-L DZ936N-BEX2-DD-9HF'.lower():
+        fits.setval(imglist[0], 'INSTRUME', value='AFOSC')
+        _instrume = 'afosc'
+        hdr = ntt.util.readhdr(imglist[0])
 
     iraf.noao(_doprint=0, Stdout=0)
     iraf.imred(_doprint=0, Stdout=0)
@@ -119,6 +127,15 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
                 _trimsec0 = '[851:1200,91:1890]'  # transposed file!
             else:
                 _trimsec0 = '[851:1200,50:2097]'  # transposed file!
+        elif _instrume == 'afosc':
+            if _grism0 == 'gr4':
+                _trimsec0 = '[601:800,1:950]'
+            elif _grism0 == 'VPH6':
+                _trimsec0 = '[601:800,1:1023]'
+            elif _grism0 == 'VPH7':
+                _trimsec0 = '[601:800,1:800]'
+            else:
+                _trimsec0 = '[601:800,*]'
         else:
             raise ValueError(
                 '{} is not a supported instrument.'.format(_instrume)
@@ -171,6 +188,8 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
                     section = dispaxi_str + ' 20'
                 else:
                     raise ValueError('Slit not supported!')
+            elif _instrume == 'afosc':
+                section = dispaxi_str + ' 20'
             else:
                 section = dispaxi_str + ' 10'
             if arcref:
@@ -253,6 +272,9 @@ def efoscfastredu(imglist, _listsens, _listarc, _ext_trace, _dispersionline, _co
                     elif _instrume == 'lrs':
                         _extinction = 'extinction_lapalma.dat'
                         _observatory = 'lapalma'
+                    elif _instrume == 'afosc':
+                        _extinction = 'ekar_ext.dat'
+                        _observatory = 'asiago'
                     else:
                         _extinction = 'extinction_paranal.dat'
                         _observatory = 'paranal' 
